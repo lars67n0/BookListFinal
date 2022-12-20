@@ -29,19 +29,19 @@
         @foreach (var item in Model.Classes)
         {
             <tr>
-                <td>
+                <td style="border-top:solid black">
                     @Html.DisplayFor(modelItem => item.ClassName)
                 </td>
-                <td>
+                <td style="border-top:solid black">
                     @Html.DisplayFor(modelItem => item.SemesterYear)
                 </td>
-                <td>
+                <td style="border-top:solid black">
                     @Html.DisplayFor(modelItem => item.TeacherName)
                 </td>
 
-                <td>
+                <td style="border-top:solid black">
                     <a asp-page="./Update" asp-route-id="@item.Id">Edit</a>
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    @*<a asp-page="./Details" asp-route-id="@item.Id">Details</a>*@
                     <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>

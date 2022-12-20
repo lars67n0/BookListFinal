@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@page
+@model BookListFinal.Pages.Books.UpdateModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -34,46 +39,85 @@
                     <ul class="navbar-nav flex-grow-1">
 
 
-
-
-                        @*Teachers Index Page*@
+                        @*Teacher BookList Index Page*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Teachers/Index">List Of Teachers</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UnderviserIndex/Books/Index">List Of Books</a>
                         </li>
 
-                        @*Books Index Page*@
+                        @*Teacher Classes Index Page*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Books/Index">List Of Books</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UnderviserIndex/Classes/Index">List Of Classes</a>
                         </li>
 
-                        @*Classes Index Page*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Classes/Index">List Of Classes</a>
-                        </li>
 
-                        @*Courses Index Page*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Courses/Index">List Of Courses</a>
-                        </li>
-
-                        @*Educations Index Page*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Educations/Index">List Of Educations</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container" style="margin-left:12%;">
+    <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
 
         </main>
     </div>
-    <div class="bg-white height: max; wídth center;">
+
+    @*Body*@
+<div style="margin-left:12%;">
+    <h1>Update Book</h1>
+
+    <h4>Books</h4>
+    <hr />
+
+    <div class="row">
+        <div class=" col-md-4">
+
+            <form method="post">
+                <div asp-validation-summary="All" class=" text-danger">
+                    <input type="hidden" asp-for=" Books.Id" />
+
+                    <div class=" form-group">
+                        <label asp-for="Books.PublishYear" class="control-label"></label>
+                        <input asp-for=" Books.PublishYear" class=" form-control" />
+                        <span asp-validation-for="Books.PublishYear" class=" text-danger"></span>
+                    </div>
+
+                    <div class=" form-group">
+                        <label asp-for="Books.AuthorName" class="control-label"></label>
+                        <input asp-for=" Books.AuthorName" class=" form-control" />
+                        <span asp-validation-for="Books.AuthorName" class=" text-danger"></span>
+                    </div>
+
+                    <div class=" form-group">
+                        <label asp-for="Books.Title" class="control-label"></label>
+                        <input asp-for=" Books.Title" class=" form-control" />
+                        <span asp-validation-for="Books.Title" class=" text-danger"></span>
+                    </div>
+
+                    <div class=" form-group">
+                        <label asp-for="Books.Description" class="control-label"></label>
+                        <input asp-for=" Books.Description" class=" form-control" />
+                        <span asp-validation-for="Books.Description" class=" text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Save Changes" class="btn btn-primary" />
+                    </div>
+                </div>
+            </form>
+        </div>
 
     </div>
+    <h5>Return To List</h5>
+    <div>
+        <a asp-page=" ./index">Back To List</a>
+    </div>
+
+</div>
+
+
+
+
+
 
 
 
@@ -96,7 +140,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
 
 </body>
 </html>

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@page
+@model BookListFinal.Pages.UnderviserIndex.IndexModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -34,32 +39,17 @@
                     <ul class="navbar-nav flex-grow-1">
 
 
-
-
-                        @*Teachers Index Page*@
+                        @*Teacher BookList Index Page*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Teachers/Index">List Of Teachers</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UnderviserIndex/Books/Index">List Of Books</a>
                         </li>
 
-                        @*Books Index Page*@
+                        @*Teacher Classes Index Page*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Books/Index">List Of Books</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/UnderviserIndex/Classes/Index">List Of Classes</a>
                         </li>
 
-                        @*Classes Index Page*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Classes/Index">List Of Classes</a>
-                        </li>
-
-                        @*Courses Index Page*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Courses/Index">List Of Courses</a>
-                        </li>
-
-                        @*Educations Index Page*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/KoordinatorIndex/Educations/Index">List Of Educations</a>
-                        </li>
+                       
                     </ul>
                 </div>
             </div>
@@ -67,13 +57,40 @@
     </header>
     <div class="container" style="margin-left:12%;">
         <main role="main" class="pb-3">
-            @RenderBody()
+            <h1>Go To Your Desired Page</h1>
 
+            <h2>How To Update List</h2>
+            <h4>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta erat urna, at sagittis odio vehicula vel.
+                Aenean gravida suscipit quam et vestibulum. Donec condimentum dapibus erat ultricies lacinia. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Nam ut nisl ante. Etiam dolor nisi, eleifend eget diam sed, tincidunt pretium mauris. Praesent
+                iaculis nisi eu accumsan sollicitudin. Proin pellentesque felis sed tellus facilisis, quis mollis quam convallis. Cras porta
+                at diam mattis convallis. Vestibulum vitae libero in tellus iaculis elementum in ut justo. Donec hendrerit porta accumsan.
+                Mauris commodo justo eu ante euismod finibus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta erat urna, at sagittis odio vehicula vel.
+                Aenean gravida suscipit quam et vestibulum. Donec condimentum dapibus erat ultricies lacinia. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Nam ut nisl ante. Etiam dolor nisi, eleifend eget diam sed, tincidunt pretium mauris. Praesent
+                iaculis nisi eu accumsan sollicitudin. Proin pellentesque felis sed tellus facilisis, quis mollis quam convallis. Cras porta
+                at diam mattis convallis. Vestibulum vitae libero in tellus iaculis elementum in ut justo. Donec hendrerit porta accumsan.
+                Mauris commodo justo eu ante euismod finibus.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta erat urna, at sagittis odio vehicula vel.
+                Aenean gravida suscipit quam et vestibulum. Donec condimentum dapibus erat ultricies lacinia. Lorem ipsum dolor sit amet,
+                consectetur adipiscing elit. Nam ut nisl ante. Etiam dolor nisi, eleifend eget diam sed, tincidunt pretium mauris. Praesent
+                iaculis nisi eu accumsan sollicitudin. Proin pellentesque felis sed tellus facilisis, quis mollis quam convallis. Cras porta
+                at diam mattis convallis. Vestibulum vitae libero in tellus iaculis elementum in ut justo. Donec hendrerit porta accumsan.
+                Mauris commodo justo eu ante euismod finibus.
+            </h4>
         </main>
     </div>
-    <div class="bg-white height: max; wídth center;">
+   <div>
+       
 
     </div>
+
+
+
+
+
 
 
 
@@ -96,7 +113,16 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+

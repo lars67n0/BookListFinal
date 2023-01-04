@@ -81,6 +81,7 @@
                     @Html.DisplayNameFor(model => model.Classes[0].TeacherName)
                 </th>
 
+
                 <th></th>
 
             </tr>
@@ -102,11 +103,20 @@
 
                     <td style="border-top:solid black">
 
-                        @*<a asp-page="./Details" asp-route-id="@item.Id">Details</a>*@
+                        <a asp-page="./Details" asp-route-id="@item.Id">Class Books</a>
 
                     </td>
                 </tr>
+
+
+
+
+
+
             }
+
+            
+
         </tbody>
     </table>
 

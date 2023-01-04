@@ -22,6 +22,13 @@ namespace BookListFinal.Pages.Classes
         public async Task OnGetAsync()
         {
             Classes = await _context.Classes.ToListAsync();
+            
         }
+
+        
+        
+
+
+
     }
 }

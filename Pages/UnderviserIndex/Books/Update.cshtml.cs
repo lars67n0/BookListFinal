@@ -1,7 +1,9 @@
 using BookApp.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BookListFinal.Pages.Books
@@ -31,11 +33,15 @@ namespace BookListFinal.Pages.Books
             {
                 return NotFound();
             }
+
+            Classes = new SelectList(_context.Classes.ToList(), "Id", "ClassName");
             return Page();
+
         }
 
         [BindProperty]
         public BookApp.Data.Book Books { get; set; }
+        public SelectList Classes { get; set; }
         public async Task<IActionResult> OnPostAsync()
         {
             if(!ModelState.IsValid)
@@ -44,6 +50,7 @@ namespace BookListFinal.Pages.Books
             }
 
             _context.Attach(Books).State = EntityState.Modified;
+            
 
             try
             {

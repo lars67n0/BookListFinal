@@ -20,7 +20,7 @@ namespace BookListFinal.Pages.Books
         }
 
         public IList<BookApp.Data.Book> Books { get; set; }
-
+        
         public async Task OnGetAsync()
         {
             Books = await _context.Books.ToListAsync();

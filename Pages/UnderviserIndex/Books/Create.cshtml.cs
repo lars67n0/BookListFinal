@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using BookApp.Data;
 
 namespace BookListFinal.Pages.Teachers
 {
@@ -16,13 +18,23 @@ namespace BookListFinal.Pages.Teachers
             _context = context;
         }
 
+       
+        [BindProperty]
+        public BookApp.Data.Book Books { get; set; }
+
+        public SelectList Classes { get; set; }
+        
+        
         public IActionResult OnGet()
         {
+            Classes = new SelectList(_context.Classes.ToList(), "Id", "ClassName");
             return Page();
         }
 
-        [BindProperty]
-        public BookApp.Data.Book Books { get; set; }
+        
+        
+
+        
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

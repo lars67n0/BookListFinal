@@ -1,5 +1,5 @@
 ﻿@page
-@model BookListFinal.Pages.Books.IndexModel
+@model BookListFinal.Pages.UnderviserIndex.Classes.DetailsModel
 @{
     Layout = null;
 }
@@ -62,60 +62,120 @@
     </div>
 
     @*Body*@
-<div style="margin-left:12%;">
-    <h1>List Of Books</h1>
+    @*<div style="margin-left:12%;">
+        <h1>List Of Class Books</h1>
 
-    <p>
-        <a asp-page="/UnderviserIndex/Books/Create">Create New</a>
-    </p>
-    <table class=" table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Books[0].Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Books[0].AuthorName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Books[0].PublishYear)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Books[0].Description)
-                </th>
-                <th></th>
 
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var item in Model.Books)
-            {
+        <table class=" table">
+            <thead>
                 <tr>
-                    <td style="border-top:solid black">
-                        @Html.DisplayFor(modelItem => item.Title)
-                    </td>
-                    <td style="border-top:solid black">
-                        @Html.DisplayFor(modelItem => item.AuthorName)
-                    </td>
-                    <td style="border-top:solid black">
-                        @Html.DisplayFor(modelItem => item.PublishYear)
-                    </td>
-                    <td style="border-top:solid black">
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td style="border-top:solid black">
-                        <a asp-page="./Update" asp-route-id="@item.Id">Edit</a>
-                        @*<a asp-page="./Details" asp-route-id="@item.Id">Details</a>*@
-                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].AuthorName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].PublishYear)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].Description)
+                    </th>
 
-</div>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Books[0].Class.ClassName)
+                    </th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model.Books)
+                {
+
+                    <tr>
+                        <td style="border-top:solid black">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td style="border-top:solid black">
+                            @Html.DisplayFor(modelItem => item.AuthorName)
+                        </td>
+                        <td style="border-top:solid black">
+                            @Html.DisplayFor(modelItem => item.PublishYear)
+                        </td>
+                        <td style="border-top:solid black">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+
+                        <td style="border-top:solid black">
+
+                            @Html.DisplayFor(modelItem => item.Class.ClassName)
+
+
+
+
+                        </td>
+
+
+
+
+
+
+
+
+
+
+                 </tr>
+
+                        }
+            </tbody>
+        </table>*@
+
+
+    <div style="margin-left:12%;">
+            <h4>Book : </h4>
+            <hr />
+            <dl class="row" >
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Books.PublishYear)
+                </dt>
+                <dd class=" col-sm-10">
+                    @Html.DisplayFor(model => model.Books.PublishYear)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Books.AuthorName)
+                </dt>
+                <dd class=" col-sm-10">
+                    @Html.DisplayFor(model => model.Books.AuthorName)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Books.Title)
+                </dt>
+                <dd class=" col-sm-10">
+                    @Html.DisplayFor(model => model.Books.Title)
+                </dd>
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Books.Description)
+                </dt>
+                <dd class=" col-sm-10">
+                    @Html.DisplayFor(model => model.Books.Description)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Class Name
+                </dt>
+              
+            </dl>
+
+
+        </div>
+
+
+   
 
 
 
